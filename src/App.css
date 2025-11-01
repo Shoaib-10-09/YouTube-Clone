@@ -1,0 +1,286 @@
+body, html, #root, .App, .yt-main {
+  margin: 0; padding: 0; min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark, html.dark, .App.dark, .App.dark .yt-main {
+  background: #181818 !important;
+  color: #fff !important;
+}
+
+.App.dark * {
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+/* Header */
+.yt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.App.dark .yt-header {
+  background: #181818 !important;
+  border-bottom: 1px solid #222;
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: #cc0000;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 22px;
+  color: #cc0000;
+}
+
+.yt-main {
+  max-width: 1040px;
+  margin: auto;
+  padding: 24px 20px 40px;
+  min-height: 600px;
+}
+
+.signin-screen {
+  text-align: center;
+  padding: 80px 20px 20px;
+}
+
+.btn-auth,
+.btn-darkmode,
+.btn-liked-videos,
+.btn-load-more,
+.back-button {
+  padding: 12px 26px;
+  border-radius: 4px;
+  color: white;
+  background-color: #cc0000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 8px 6px;
+  transition: background-color 0.2s;
+  font-size: 15px;
+}
+
+.btn-darkmode, .btn-liked-videos, .btn-load-more, .back-button {
+  background: #eee;
+  color: #333;
+  border: 1px solid #ccc;
+  font-weight: 600;
+  padding: 8px 16px;
+}
+
+.btn-auth:hover,
+.btn-darkmode:hover,
+.btn-liked-videos:hover,
+.back-button:hover,
+.btn-load-more:hover {
+  background: #a30000;
+  color: #fff;
+}
+
+.App.dark .btn-auth, 
+.App.dark .btn-darkmode,
+.App.dark .btn-load-more,
+.App.dark .btn-liked-videos,
+.App.dark .back-button {
+  background: #232323 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+.App.dark .btn-auth:hover,
+.App.dark .btn-darkmode:hover,
+.App.dark .btn-load-more:hover,
+.App.dark .btn-liked-videos:hover,
+.App.dark .back-button:hover {
+  background: #272727 !important;
+}
+
+.subs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.15s;
+}
+.channel-item:hover {
+  background-color: #f4f4f4;
+}
+.channel-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid #eee;
+  object-fit: cover;
+}
+
+.App.dark .channel-item {
+  background: #232323 !important;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.video-card {
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.08);
+  overflow: hidden;
+  background: white;
+  transition: box-shadow 0.3s;
+}
+.video-card:hover {
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.25);
+}
+
+.App.dark .video-card {
+  background: #232323 !important;
+}
+
+.video-thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.video-title {
+  font-size: 14px;
+  padding: 8px 12px 0;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+  min-height: 40px;
+}
+
+.video-date {
+  font-size: 12px;
+  color: #999;
+  padding: 4px 12px 12px;
+}
+
+.App.dark .video-date {
+  color: #bbb;
+}
+
+.player-view {
+  max-width: 760px;
+  margin: auto;
+  padding: 16px 0;
+}
+
+.video-player {
+  margin-top: 12px;
+}
+
+.video-player h3 {
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: inherit;
+}
+
+/* Comments */
+.comments-section {
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  padding-top: 16px;
+}
+.comments-section h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.comment {
+  margin-bottom: 14px;
+}
+.comment strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.comment p {
+  margin: 0;
+}
+.replies {
+  margin-left: 16px;
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 1.5px solid #888;
+}
+.reply {
+  margin-bottom: 10px;
+}
+.reply strong {
+  font-weight: 600;
+}
+.reply p {
+  margin: 0;
+}
+
+.video-search {
+  width: 100%;
+  max-width: 360px;
+  margin: 10px 0 16px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1.2px solid #ccc;
+  border-radius: 6px;
+  outline-color: #cc0000;
+  background: #f1f1f1;
+  color: #221;
+}
+.App.dark .video-search {
+  background: #191919;
+  color: #fff;
+  border-color: #555;
+}
+/* Watched Videos button - use standard .btn-liked-videos */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subs-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  .video-card {
+    height: auto;
+  }
+  .video-thumb {
+    height: 180px;
+  }
+  .player-view {
+    max-width: 100%;
+  }
+  .video-player iframe {
+    height: 250px !important;
+  }
+}

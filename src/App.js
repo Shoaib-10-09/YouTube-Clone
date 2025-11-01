@@ -26,7 +26,7 @@ function App() {
   const [showingLiked, setShowingLiked] = useState(false);
   const [showingWatched, setShowingWatched] = useState(false);
   const [watchedVideos, setWatchedVideos] = useState([]);
-  const [totalPages, setTotalPages] = useState(1);
+  const [setTotalPages] = useState(1);
 
   // Keep login for 1 hour
   useEffect(() => {
@@ -38,7 +38,7 @@ function App() {
       setAccessToken(stored);
       fetchSubscriptions(stored);
     }
-  }, []); // run once
+  }, [darkMode]); // run once
 
   // Helper: get API URL and params
   function getApiConfig(channelId, token) {
@@ -152,7 +152,6 @@ function App() {
       setVideos(newVideos);
 
       let nextTokens = [...pageTokens];
-      const thisPageToken = token || null;
       if (!userJump && response.data.nextPageToken) {
         if (pageIdx === pageTokens.length - 1)
           nextTokens = [...nextTokens, response.data.nextPageToken];
